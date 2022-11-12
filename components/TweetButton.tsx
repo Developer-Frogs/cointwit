@@ -1,7 +1,18 @@
 import React from "react";
 
-function TweetButton() {
-  return <button className="bg-twitBlue rounded-3xl p-2 my-2">Tweet</button>;
+interface ITweetButton {
+  onClick: () => void;
+}
+
+function TweetButton({ onClick }: ITweetButton) {
+  return (
+    <button
+      className="bg-twitBlue rounded-3xl p-2 my-2 w-full relative -top-4"
+      onClick={onClick}
+    >
+      Tweet
+    </button>
+  );
 }
 
 export default TweetButton;
