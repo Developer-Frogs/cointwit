@@ -1,19 +1,23 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
-import Feed from "../components/Feed";
-import SideBar from "../components/SideBar";
-import Widgets from "../components/Widgets";
+import Feed from "../src/components/containers/Feed";
+import SideBar from "../src/components/containers/SideBar";
+import Widgets from "../src/components/containers/Widgets";
 import { useAuth } from "../contexts/auth.context";
 import styles from "../styles/Home.module.css";
+import SignUp from "../src/components/UI/SignUp";
+import Modal from "../src/components/UI/Modal";
+import useModal from "../src/configs/hooks/useModal";
 
 const USERNAME = "birkanalpyaman@gmail.com";
 const PASSWORD = "123456";
 
 export default function Home() {
   const { signIn, signOut, signUp, user } = useAuth();
+  const  { isModalVisible, openModal, closeModal } = useModal();
 
-  const SignUp = async () => {
+  const handleSignUp = async () => {
     const res = await signUp(USERNAME, PASSWORD);
     console.log("Home SignUp", res);
   };
@@ -33,17 +37,17 @@ export default function Home() {
   }, [user]);
 
   return (
-    <div className="">
+    <div>
       <Head>
         <title>CoinTwit</title>
       </Head>
-      <main className="grid grid-cols-9 bg-black min-h-screen text-twitGray">
+      <main className="grid grid-cols-9 min-h-screen text-twitGray">
         <SideBar />
         <Feed />
         <Widgets />
-        <button onClick={SignUp}>SignUp</button>
+        {/* <button onClick={handleSignUp}>SignUp</button>
         <button onClick={SignIn}>SignIn</button>
-        <button onClick={SignOut}>SignOut</button>
+        <button onClick={SignOut}>SignOut</button> */}
       </main>
     </div>
   );
