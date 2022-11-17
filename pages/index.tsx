@@ -15,7 +15,7 @@ const PASSWORD = "123456";
 
 export default function Home() {
   const { signIn, signOut, signUp, user } = useAuth();
-  const  { isModalVisible, openModal, closeModal } = useModal();
+  const { isModalVisible, openModal, closeModal } = useModal();
 
   const handleSignUp = async () => {
     const res = await signUp(USERNAME, PASSWORD);
@@ -45,6 +45,7 @@ export default function Home() {
         <SideBar />
         <Feed />
         <Widgets />
+
         {/* <button onClick={handleSignUp}>SignUp</button>
         <button onClick={SignIn}>SignIn</button>
         <button onClick={SignOut}>SignOut</button> */}
