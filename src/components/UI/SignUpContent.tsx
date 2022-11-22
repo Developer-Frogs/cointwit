@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import SInput from "../FormElements/SInput";
+import SMailInput from "../FormElements/SMailInput";
+import SPassword from "../FormElements/SPassword";
 
 interface IFormInput {
   email: string;
@@ -14,19 +15,18 @@ function SignUpContent() {
   return (
     <form className="m-5 space-y-5" onSubmit={handleSubmit(onSubmit)}>
       <h1 className="text-2xl font-bold mb-1">Create your account</h1>
-      <SInput name="email" placeholder="email" register={register} />
-      {/* <input
-        className="w-full h-14 p-3 bg-black border-2 border-slate-700 rounded-md"
-        type="text"
+      <SMailInput
+        name="email"
         placeholder="email"
-        {...register("email")}
+        register={register}
+        required
       />
-      <input
-        className="w-full h-14 p-3  bg-black border-2 border-slate-700 rounded-md"
-        type="text"
-        placeholder="password"
-        {...register("password")}
-      /> */}
+      <SPassword
+        name="password"
+        placeholder="Password"
+        register={register}
+        required
+      />
       <div className="w-full text-center">
         <button type="submit" className="bg-twitBlue w-2/3 h-14 rounded-full">
           Create

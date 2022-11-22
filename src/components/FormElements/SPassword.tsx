@@ -1,18 +1,18 @@
 import React from "react";
 
-interface ISInput {
+interface ISPassword {
   name: string;
   placeholder?: string;
   register: any;
   [x: string]: any;
 }
 
-function SInput({ name, placeholder, register, ...rest }: ISInput) {
+function SPassword({ name, placeholder, register, ...rest }: ISPassword) {
   return (
     <input
       name={name}
       className="w-full h-14 p-3 bg-black border-2 border-slate-700 rounded-md"
-      type="text"
+      type="password"
       placeholder={placeholder}
       {...register(name)}
       {...rest}
@@ -20,4 +20,4 @@ function SInput({ name, placeholder, register, ...rest }: ISInput) {
   );
 }
 
-export default SInput;
+export default SPassword;

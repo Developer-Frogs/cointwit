@@ -9,6 +9,8 @@ import styles from "../styles/Home.module.css";
 import SignUp from "../src/components/UI/SignUp";
 import Modal from "../src/components/UI/Modal";
 import useModal from "../src/configs/hooks/useModal";
+import SignUpButton from "../src/components/UI/SignUpButton";
+import Footer from "../src/components/containers/Footer";
 
 const USERNAME = "birkanalpyaman@gmail.com";
 const PASSWORD = "123456";
@@ -50,6 +52,7 @@ export default function Home() {
         <button onClick={SignIn}>SignIn</button>
         <button onClick={SignOut}>SignOut</button> */}
       </main>
+      <Footer />
     </div>
   );
 }
